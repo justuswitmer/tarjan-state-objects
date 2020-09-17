@@ -32,6 +32,11 @@ class App extends Component {
     });
   }
 
+  onChangeCreature = () => {
+    console.log('test creature of the night');
+
+  }
+
   render() {
     console.log('state', this.state);
 
@@ -51,6 +56,10 @@ class App extends Component {
 
         <h4>Edit user form</h4>
         <input type="text" placeholder="Favorite Pizza Topping" onChange={this.onChangePizza} />
+
+
+        <h4>Creature of the Night</h4>
+        <input type="text" placeholder="Creature of the Night" onChange={this.onChangeCreature} />
 
 
       </div>

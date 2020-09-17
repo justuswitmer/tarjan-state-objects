@@ -30,6 +30,9 @@ class Creatures extends Component {
         });
     }
 
+    loveIt = (creature) => {
+        console.log(`I love the ${creature}! `);
+    }
     // capture and store the new creature name
     // so we can use it later to add it to the list of creatures
     onChangeCreatureName = (event) => {
@@ -58,14 +61,6 @@ class Creatures extends Component {
         //     <li>{creature}</li>
         // );
 
-
-
-
-
-
-
-
-
         return (
             <div>
                 <input
@@ -80,7 +75,7 @@ class Creatures extends Component {
                     {this.state.creatures.map((creature, i) =>
                         <li key={i}>
                             <em>{creature}</em>
-                            <button>Click Me!</button>
+                            <button onClick={() => this.loveIt(creature)}>Love it!</button>
                         </li>
                     )}
                 </ul>
