@@ -63,6 +63,8 @@ class Creatures extends Component {
 
         return (
             <div>
+                <h1>Featured Creature of the Night:</h1>
+                <h3>{this.props.creatureProp}</h3>
                 <input
                     type="text"
                     placeholder="New Creature Name"

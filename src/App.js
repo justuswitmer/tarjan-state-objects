@@ -9,6 +9,7 @@ class App extends Component {
   state = {
     cohortName: 'Tarjan',
     salutation: 'Hello',
+    creaturOTNight: '',
     user: {
       name: 'Justus',
       whereILive: 'Burnsville',
@@ -32,9 +33,11 @@ class App extends Component {
     });
   }
 
-  onChangeCreature = () => {
-    console.log('test creature of the night');
-
+  onChangeCreature = (event) => {
+    console.log('creature of the night', event.target.value);
+    this.setState({
+      creaturOTNight: event.target.value
+    })
   }
 
   render() {
@@ -44,7 +47,7 @@ class App extends Component {
       <div>
         <h1>{this.state.cohortName} Learns State with Objects</h1>
         <h4>Mythical Creatures</h4>
-        <Creatures />
+        <Creatures creatureProp={this.state.creaturOTNight} />
         <div>
           {this.state.salutation}!
         </div>
@@ -60,7 +63,6 @@ class App extends Component {
 
         <h4>Creature of the Night</h4>
         <input type="text" placeholder="Creature of the Night" onChange={this.onChangeCreature} />
-
 
       </div>
     );
